@@ -169,3 +169,5 @@ cython_debug/
 # Directories with Scratch Work
 scratch_files/
 debug_images/
+
+key.json
