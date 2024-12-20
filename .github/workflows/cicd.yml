@@ -1,7 +1,7 @@
 name: CI/CD Pipeline
 on:
   push:
-    branches: [ main ]
+    branches: [ main, development ]
 
 jobs:
   lint:
@@ -44,6 +44,7 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     needs: [lint, test]
+    if: github.ref == 'refs/heads/main'
     steps:
     - uses: actions/checkout@v2
     - name: Google Auth
